@@ -9,10 +9,23 @@ function Login() {
   const [isLoading, setIsLoading] = useState(false); // Track loading state
   const navigate = useNavigate();
 
+  const deleteAllSessions = async () => {
+    try {
+      await account.deleteSessions();
+    } catch (err) {
+      console.error("Error deleting sessions:", err);
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true); // Set loading state to true
+    setError(""); // Reset error state
     try {
+      // Delete all previous sessions
+      await deleteAllSessions();
+
+      
       await account.createEmailPasswordSession(email, password);
       navigate("/profile"); // Redirect to dashboard or desired page after login
     } catch (err) {
