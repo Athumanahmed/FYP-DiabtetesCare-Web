@@ -46,18 +46,15 @@ const Profile = () => {
   };
   return (
     <>
-      <div className="fixed w-full z-10 text-white">
-        <div className="flex flex-row justify-between p-3 md:px-32 px-5 bg-backgroundColor shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]">
-          <div className="flex flex-row items-center cursor-pointer">
-            <Link to={"/"}>
-              <h1 className="text-2xl font-semibold">DiabetesCare.</h1>
-            </Link>
-          </div>
-        </div>
+      <div className="p-3 md:px-32 px-5 bg-backgroundColor shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px]">
+        <Link to="/" className="text-white text-2xl font-semibold">
+          DiabetesCare
+        </Link>
       </div>
 
       <div className=" mx-auto   p-10  ">
-        <h2 className="text-xl font-semibold mb-4">Create Doctor's Profile</h2>
+        <h2 className="text-2xl font-semibold py-2 text-center">Doctor's Profile</h2>
+        <p className="text-center text-lg text-slate-500">Create your Profile now.</p>
         <form onSubmit={handleSubmit}>
           <div className="flex flex-wrap -mx-4">
             <div className="w-full md:w-1/3 px-4 mb-4">
